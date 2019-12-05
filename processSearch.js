@@ -1,5 +1,6 @@
 function getSearchResults() {
-  const customSearch = "https://www.googleapis.com/customsearch/v1?key=AIzaSyDhYjvBUn7SzoYuBs4iuT-hyDb_jId_wCg&cx=008324168369276683029:kooy2ymdvmj&q=";
+  const customSearch = "";
+  // Google API key ommitted
   var result = document.getElementById("displayText");
   result.innerHTML= "";
   var newsearchurl = customSearch + document.getElementById("search_words").value;
