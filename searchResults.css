@@ -1,0 +1,7 @@
+div #csvFile, div #xmlFile, div #jsonFile, div #searchResults {
+  background-color: lightgray;
+}
+
+input[type=text] {
+  width: 45%;
+}

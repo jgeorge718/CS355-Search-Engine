@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<title>CS 355 Term Project</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="searchResults.css">
+
+<body>
+
+  <div style="padding-left:10px">
+    <div>
+      <label id="label" for="searchFile" style="font-size:20px">Choose file to search: </label><br>
+      <input id="searchFile" type="file" accept=".csv, .json, .xml" onchange="startSearch()">
+      <button onclick="selectAll()">Select All</button>
+      <button onclick="deselectAll()">Deselect All</button>
+      <br><br>
+    </div>
+    <div id="displayText">
+    </div>
+    <script src="processFile.js"></script>
+    <div id="buttons">
+      <br>
+      <button onclick="download_csv()">Download CSV File</button>
+      <button onclick="download_xml()">Download XML File</button>
+      <button onclick="download_json()">Download JSON File</button>
+    </div>
+    <br>
+    <button onclick="window.location.href='index.html'">Home</button>
+  </div>
+  <script src="downloadResults.js"></script>
+</body>
+</html>

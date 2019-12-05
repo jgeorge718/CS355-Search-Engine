@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<title>CS 355 Term Project</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<body>
+
+  <div style="padding-left:10px">
+    <h2>Information about your browser location:</h2>
+  </div>
+
+  <p style="padding-left:10px" id="href"></p>
+  <p style="padding-left:10px" id="hostname"></p>
+  <p style="padding-left:10px" id="pathname"></p>
+  <p style="padding-left:10px" id="protocol"></p>
+
+  <button onclick="window.location.href='index.html'">Home</button>
+
+  <script>
+    document.getElementById("href").innerHTML = "The URL of this page is " + window.location.href;
+    document.getElementById("hostname").innerHTML = "The name of the internet host of this page is " + window.location.hostname;
+    document.getElementById("pathname").innerHTML = "The path name of the current page is " + window.location.pathname;
+    document.getElementById("protocol").innerHTML = "The web protocol of this page is " + window.location.protocol;
+  </script>
+</body>
+</html>

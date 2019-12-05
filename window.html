@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<title>CS 355 Term Project</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<body>
+
+  <div style="padding-left:10px">
+    <h2>Information about your browser window:</h2>
+  </div>
+
+  <p style="padding-left:10px" id="innerHeight">hi</p>
+  <p style="padding-left:10px" id="innerWidth"></p>
+
+  <button onclick="window.location.href='index.html'">Home</button>
+
+  <script>
+    document.getElementById("innerHeight").innerHTML = "The height of your window is " + window.innerHeight + "px.";
+    document.getElementById("innerWidth").innerHTML = "The width of your window is " + window.innerWidth + "px.";
+  </script>
+</body>
+</html>

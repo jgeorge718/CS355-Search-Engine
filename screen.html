@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<title>CS 355 Term Project</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<body>
+
+  <div style="padding-left:10px">
+    <h2>Information about your browser screen:</h2>
+  </div>
+
+  <p style="padding-left:10px" id="width"></p>
+  <p style="padding-left:10px" id="height"></p>
+  <p style="padding-left:10px" id="availWidth"></p>
+  <p style="padding-left:10px" id="availHeight"></p>
+  <p style="padding-left:10px" id="colorDepth"></p>
+  <p style="padding-left:10px" id="pixelDepth"></p>
+
+  <button onclick="window.location.href='index.html'">Home</button>
+
+  <script>
+    document.getElementById("width").innerHTML = "The width of your screen is " + screen.width + "px.";
+    document.getElementById("height").innerHTML = "The height of your screen is " + screen.height + "px.";
+    document.getElementById("availWidth").innerHTML = "The available width of your screen is " + screen.availWidth + "px.";
+    document.getElementById("availHeight").innerHTML = "The available height of your screen is " + screen.availHeight + "px.";
+    document.getElementById("colorDepth").innerHTML = "The color depth of your screen is " + screen.colorDepth + " bits.";
+    document.getElementById("pixelDepth").innerHTML = "The pixel depth of your screen is " + screen.pixelDepth + "px.";
+  </script>
+</body>
+</html>
