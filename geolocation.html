@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<title>CS 355 Term Project</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<body>
+
+  <div style="padding-left:10px">
+    <h2>Information about your current location:</h2>
+  </div>
+
+  <p style="padding-left:10px">Click the first button to get your coordinates</p>
+
+  <button onclick="getLocation()">Coordinates</button>
+
+  <p style="padding-left:10px" id="coordinates"></p>
+
+  <button onclick="window.location.href='index.html'">Home</button>
+
+  <script>
+  var x = document.getElementById("coordinates");
+
+  function getLocation() {
+    if (navigator.geolocation)
+      navigator.geolocation.getCurrentPosition(showPosition);
+    else
+      x.innerHTML = "Geolocation is not supported by this browser.";
+  }
+
+  function showPosition(position) {
+    x.innerHTML = "Your latitude is " + position.coords.latitude + "<br>Your longitude is " + position.coords.longitude;
+    }
+
+  </script>
+</body>
+</html>

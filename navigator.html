@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<title>CS 355 Term Project</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<body>
+
+  <div style="padding-left:10px">
+    <h2>Information about your browser navigator:</h2>
+  </div>
+
+  <p style="padding-left:10px" id="appName"></p>
+  <p style="padding-left:10px" id="product"></p>
+  <p style="padding-left:10px" id="appVersion"></p>
+  <p style="padding-left:10px" id="userAgent"></p>
+  <p style="padding-left:10px" id="platform"></p>
+  <p style="padding-left:10px" id="language"></p>
+
+  <button onclick="window.location.href='index.html'">Home</button>
+
+  <script>
+    document.getElementById("appName").innerHTML = "The application name of your browser is " + navigator.appName + ".";
+    document.getElementById("product").innerHTML = "The product name of your browser engine is " + navigator.product + ".";
+    document.getElementById("appVersion").innerHTML = "Version information: " + navigator.appVersion;
+    document.getElementById("userAgent").innerHTML = "User-agent information: " + navigator.userAgent;
+    document.getElementById("platform").innerHTML = "Your operating system is " + navigator.platform + ".";
+    document.getElementById("language").innerHTML = "The language used is " + navigator.language + ".";
+  </script>
+</body>
+</html>

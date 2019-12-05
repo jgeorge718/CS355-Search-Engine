@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<title>CS 355 Term Project</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="searchResults.css">
+
+<body>
+
+  <div style="padding-left:10px">
+    <div>
+      <label id="label" for="searchGoogle" style="font-size:20px">Try searching something: </label><br>
+      <form id="search_bar" action="javascript:void(0);" onsubmit="getSearchResults()">
+        <input type="text" id="search_words">
+        <button type="submit" id="search"><i class = "fa fa-search"></i>Search</button>
+      </form>
+      <button onclick="selectAll()">Select All</button>
+      <button onclick="deselectAll()">Deselect All</button>
+      <br><br>
+    </div>
+    <div id="displayText">
+    </div>
+    <script src="processSearch.js"></script>
+    <div id="buttons">
+      <br>
+      <button onclick="download_csv()">Download CSV File</button>
+      <button onclick="download_xml()">Download XML File</button>
+      <button onclick="download_json()">Download JSON File</button>
+    </div>
+    <br>
+    <button onclick="window.location.href='index.html'">Home</button>
+  </div>
+  <script src="downloadResults.js"></script>
+</body>
+</html>
