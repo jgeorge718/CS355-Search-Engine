@@ -6,7 +6,11 @@ function crawl_page($url)
     $dbuser = "cama0204";
     $dbpass = "23830204";
     $db = "cama0204";
-    $conn = new mysqli($dbhost, $dbuser, $dbpass,$db) or die("Connect failed: %s\n". $conn -> error);
+    $conn = new mysqli($dbhost, $dbuser, $dbpass, $db, 3306);
+	
+	if ($conn->connect_error) {
+        die("Connection failed: " . $conn->connect_error);
+    }
 
     $starttime = microtime(true);
     $dom = new DOMDocument('1.0');
@@ -98,6 +102,9 @@ function crawl_page($url)
         echo "row already exists";
     }
     $conn -> close();
+	
+	crawl_page($_POST['url']);
+	echo "Indexed ",$_POST['url'];
 }
-crawl_page($_POST['url']);
-echo "Indexed ",$_POST['url'];
+
+?>
