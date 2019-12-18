@@ -114,11 +114,12 @@ function crawl_page($url)
 		}
         //Index word and pageword together
         //Get page id
-        $pageQuery = $conn->query("SELECT pageId FROM page WHERE url = '$url'");
+        $pageQuery = $conn->query("SELECT pageId FROM Page WHERE url = '$url'");
         $pageRow = $pageQuery->fetch_assoc();
         $pageId = $pageRow["pageId"];
         foreach($ps as $element){
             $text = $element->textContent;
+			echo "\n" . $text;
             if(trim($text) != ""){
                 $words = explode(" ", $text);
                 foreach($words as $word){
@@ -129,6 +130,8 @@ function crawl_page($url)
 								echo "RESULT: " .  print_r($wordResult->fetch_assoc());
 								$wordResult->free_result();
 							}
+							
+						echo $word;
                         if($wordResult->num_rows == 0) {
                             $insertWord = "INSERT INTO word (wordName)
                                 VALUES ($word)";
