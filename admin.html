@@ -63,16 +63,7 @@
       e.preventDefault();
       var valueURL = document.querySelector('#value').value;
       console.log(valueURL)
-      fetch('https://mars.cs.qc.cuny.edu', {
-        header: {
-          'method': 'POST',
-          'Accepts': 'applcation/json',
-          'Content-Type': 'application/json',
-        },
-        'body':{
-
-        }
-      })
+      fetch('https://venus.cs.qc.cuny.edu/~gejo1100/cs355/')
       .then(res => res.json())
       .then(res => console.log(res));
     }
