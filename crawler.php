@@ -1,4 +1,5 @@
 <?php
+header("Access-Control-Allow-Origin: *");
 function crawl_page($url)
 {
     $dbhost = "mars.cs.qc.cuny.edu";
@@ -6,7 +7,7 @@ function crawl_page($url)
     $dbpass = "23830204";
     $db = "cama0204";
     $conn = new mysqli($dbhost, $dbuser, $dbpass,$db) or die("Connect failed: %s\n". $conn -> error);
- 
+
     $starttime = microtime(true);
     $dom = new DOMDocument('1.0');
     @$dom->loadHTMLFile($url);
@@ -23,13 +24,13 @@ function crawl_page($url)
         $metaAr = $meta;
         if($meta->getAttribute('name') == 'description')
             $description = strval($meta->getAttribute('content'));
-            
+
         if($meta->getAttribute('name') == 'keywords')
             $keywords = $meta->getAttribute('content');
     }
     $ps = $dom->getElementsByTagName('p');
     $parray = [];
-    
+
     //Index page
     $result = $conn->query("SELECT pageId FROM page WHERE url = '$url'");
     if($result->num_rows == 0) {
@@ -66,7 +67,7 @@ function crawl_page($url)
                             $wordId = $wordRow["wordId"];
                             // Query for page word
                             $pageWordResult = $conn->query(
-                                    "SELECT pageId, wordId  FROM page_word 
+                                    "SELECT pageId, wordId  FROM page_word
                                     WHERE pageId = '$pageId' AND wordId = '$wordId'");
                             // If not in table yet, add
                             if($pageWordResult->num_rows == 0){
@@ -80,7 +81,7 @@ function crawl_page($url)
                                     WHERE pageId = '$pageId' AND wordId = '$wordId'";
                             }
                             mysqli_query($conn, $insertPageWord);
-                        }  
+                        }
                     }
                 }
             }
